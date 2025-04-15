@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milieuvriendelijk Rioolonderhoud: De Rol van Relining in CO2-Reductie</title>
+    <style>
+        :root {
+            --primary: #2c7873;
+            --secondary: #6fb98f;
+            --accent: #f4a261;
+            --light: #f7f9f9;
+            --dark: #2d3436;
+            --text: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        section {
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 25px 0 15px;
+        }
+        
+        .img-container {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .method-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .method-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .comparison-item {
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .traditional {
+            background-color: #ffecec;
+            border-top: 5px solid #ff6b6b;
+        }
+        
+        .relining {
+            background-color: #e8f5e9;
+            border-top: 5px solid #4caf50;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-item h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .benefit-item h4 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .cta {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 40px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta h2::after {
+            background-color: white;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--accent);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .img-container {
+                height: 250px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="hero">
+        <h1>Milieuvriendelijk Rioolonderhoud</h1>
+        <p>De Rol van Relining in CO2-Reductie</p>
+    </div>
+    
+    <div class="container">
+        <section id="intro">
+            <h2>Duurzaamheid in Rioolbeheer</h2>
+            <p>De klimaatcrisis vereist innovatieve oplossingen in alle sectoren, inclusief rioolonderhoud. Traditionele methoden voor rioolreparatie, zoals open graafwerkzaamheden, zijn niet alleen verstorend maar ook schadelijk voor het milieu vanwege de hoge CO₂-uitstoot. <strong>Relining</strong>, een techniek waarbij bestaande leidingen worden gerepareerd zonder volledige vervanging, biedt een duurzaam alternatief. Uit <a href="https://riool-herstel.nl/" style="color: var(--accent);">relinen riool ervaringen</a> blijkt dat deze methode niet alleen efficiënt is, maar ook aanzienlijk minder milieubelastend. Dit artikel onderzoekt hoe relining bijdraagt aan CO₂-reductie en milieuvriendelijk rioolbeheer.</p>
+            
+            <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1581093196277-1e316dc1b5f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+        </section>
+        
+        <section id="wat-is-relining">
+            <h2>Wat is Relining en Hoe Werkt Het?</h2>
+            <p>Relining is een <strong>trenchless technology</strong> (graafvrije techniek) waarbij een nieuwe, duurzame binnenbuis in een bestaand riool wordt geplaatst. Er zijn verschillende methoden:</p>
+            
+            <div class="method-card">
+                <h4><i class="fas fa-tint"></i> Cured-in-Place Pipe (CIPP)</h4>
+                <p>Een met hars verzadigde liner wordt in de leiding geplaatst en uitgehard met warm water, stoom of UV-licht.</p>
+            </div>
+            
+            <div class="method-card">
+                <h4><i class="fas fa-spinner"></i> Spiral Winding</h4>
+                <p>Een PVC- of HDPE-strip wordt spiraalvormig in de buis aangebracht.</p>
+            </div>
+            
+            <div class="method-card">
+                <h4><i class="fas fa-bolt"></i> Pipe Bursting</h4>
+                <p>De oude buis wordt vervangen door een nieuwe door deze open te breken en tegelijkertijd een nieuwe leiding te trekken.</p>
+            </div>
+            
+            <p>Deze methoden minimaliseren grondverzet en verminderen de ecologische voetafdruk aanzienlijk.</p>
+        </section>
+        
+        <section id="co2-vergelijking">
+            <h2>CO₂-Uitstoot van Traditioneel Rioolonderhoud vs. Relining</h2>
+            
+            <div class="comparison">
+                <div class="comparison-item traditional">
+                    <h3>Traditionele Methode: Open Graafwerkzaamheden</h3>
+                    <ul>
+                        <li><strong>Zware machines</strong> zoals graafmachines en vrachtwagens stoten grote hoeveelheden CO₂ uit.</li>
+                        <li><strong>Transport van materialen</strong> (nieuwe buizen, grind, asfalt) verhoogt de uitstoot.</li>
+                        <li><strong>Langer projecttraject</strong> leidt tot meer energieverbruik.</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-item relining">
+                    <h3>Relining: Een Groen Alternatief</h3>
+                    <ul>
+                        <li><strong>Minder grondverzet</strong> = minder dieselverbruik door machines.</li>
+                        <li><strong>Geen volledige vervanging</strong> = besparing op materiaalproductie (beton, PVC, HDPE).</li>
+                        <li><strong>Kortere projectduur</strong> = lagere energieconsumptie.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p><strong>Uit onderzoek blijkt dat relining tot 70% minder CO₂ uitstoot dan traditionele methoden.</strong></p>
+            
+            <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2111&q=80');"></div>
+        </section>
+        
+        <section id="milieuvoordelen">
+            <h2>Andere Milieuvoordelen van Relining</h2>
+            <p>Naast CO₂-reductie biedt relining nog meer ecologische voordelen:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4><i class="fas fa-tree"></i> Minder Bodemverstoring</h4>
+                    <ul>
+                        <li>Bescherming van boomwortels en ondergrondse ecosystemen.</li>
+                        <li>Geen risico op verontreiniging door opgravingen bij vervuilde grond.</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4><i class="fas fa-trash-alt"></i> Minder Afvalproductie</h4>
+                    <ul>
+                        <li>Geen verwijdering van oude leidingen, waardoor minder puin op stortplaatsen belandt.</li>
+                        <li>Hergebruik van bestaande infrastructuur verlengt de levensduur van riolen.</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4><i class="fas fa-tint"></i> Waterbescherming</h4>
+                    <ul>
+                        <li>Minder kans op lekkages door een naadloze binnenvoering.</li>
+                        <li>Voorkomt verontreiniging van grondwater door scheuren in oude leidingen.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="economische-voordelen">
+            <h2>Economische Voordelen van Relining</h2>
+            <p>Duurzaamheid en kostenbesparing gaan hand in hand:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4><i class="fas fa-euro-sign"></i> Lagere Kosten</h4>
+                    <p>Lagere arbeidskosten door minder mankracht en kortere projectduur.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4><i class="fas fa-road"></i> Minder Overlast</h4>
+                    <p>Minder verstoring voor verkeer en bewoners, waardoor minder economische schade.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4><i class="fas fa-hand-holding-usd"></i> Subsidies</h4>
+                    <p>Subsidiemogelijkheden voor groene infrastructuurprojecten.</p>
+                </div>
+            </div>
+            
+            <p><strong>Relining is niet alleen goed voor het milieu, maar ook voor de portemonnee.</strong></p>
+        </section>
+        
+        <section id="toekomst">
+            <h2>Toekomst van Duurzaam Rioolbeheer</h2>
+            <p>De techniek blijft evolueren met nieuwe ontwikkelingen:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h4><i class="fas fa-leaf"></i> Bio-based harsen</h4>
+                    <p>Voor CIPP, gemaakt van hernieuwbare grondstoffen.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4><i class="fas fa-robot"></i> Robotgestuurde inspecties</h4>
+                    <p>Met AI om leidingen nauwkeuriger te analyseren.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h4><i class="fas fa-magic"></i> Zelfherstellende materialen</h4>
+                    <p>Die kleine scheuren automatisch repareren.</p>
+                </div>
+            </div>
+            
+            <p>Met deze innovaties wordt relining nóg milieuvriendelijker en efficiënter.</p>
+        </section>
+        
+        <section class="cta">
+            <h2>Klaar voor Duurzaam Rioolbeheer?</h2>
+            <p>Ontdek hoe relining uw CO₂-voetafdruk kan verkleinen en tegelijkertijd kosten kan besparen.</p>
+            <a href="#contact" class="cta-button">Neem Contact Op</a>
+        </section>
+        
+        <section id="conclusie">
+            <h2>Conclusie: Relining als Hoofdrolspeler in Groene Infrastructuur</h2>
+            <p>Relining is een <strong>cruciale techniek</strong> in de transitie naar duurzaam rioolbeheer. Door CO₂-uitstoot te verminderen, grondverstoring te minimaliseren en kosten te besparen, biedt het een <strong>win-win voor milieu en economie</strong>. Gemeenten en bedrijven die investeren in relining dragen niet alleen bij aan klimaatdoelstellingen, maar zorgen ook voor een <strong>robuust en toekomstbestendig rioolstelsel</strong>.</p>
+            
+            <p><strong>De keuze voor relining is een keuze voor een groenere toekomst.</strong></p>
+        </section>
+    </div>
+</body>
+</html>
